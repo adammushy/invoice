@@ -12,9 +12,13 @@ class MainView extends StatefulWidget {
 class _MainViewState extends State<MainView> {
   int _currentIndex = 0;
 
-  List<Widget> tabs = [Home(), 
+  List<Widget> tabs = [
+    Home(), 
   Invoice(),
-   Payment(), Profile(),ContactScreen()];
+  //  Payment(), 
+   Profile(),
+   ContactScreen(),
+   AboutPage()];
   @override
   void initState() {
     super.initState();

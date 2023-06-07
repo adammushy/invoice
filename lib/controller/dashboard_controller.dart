@@ -3,9 +3,10 @@ import 'package:invoice/imports.dart';
 class DashboardController {
   final dashboardList = [
     DashboardModel(
+    
       icon: Icons.list_alt_outlined,
       title: 'Total\nProduct',
-      value: '06',
+      value: '05',
     ),
     DashboardModel(
       icon: Icons.groups_outlined,

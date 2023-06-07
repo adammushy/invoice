@@ -1,4 +1,3 @@
-
 // import 'package:flutter/material.dart';
 import 'package:invoice/imports.dart';
 
@@ -18,42 +17,43 @@ class _ContactScreenState extends State<ContactScreen> {
         elevation: 0,
         title: const Text('Contact Us'),
       ),
-
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
             children: [
               CustomListTile2(
-                "Email",
-                Icons.mail,
-                Icons.keyboard_arrow_right_outlined,
-              ),
-              CustomListTile2(
-                "Phone Contact",
-                Icons.phone,
-                Icons.keyboard_arrow_right_outlined,
-              ),
+                  "Email", Icons.mail, Icons.keyboard_arrow_right_outlined,
+                  onTap: () {
+                launch('mailto:adamprosper99@gmail.com');
+              }),
+              CustomListTile2("0719401594", Icons.phone,
+                  Icons.keyboard_arrow_right_outlined, onTap: () {
+                launch('tel:0719401594');
+              }),
+
               CustomListTile2(
                 "Facebook",
                 Icons.facebook,
                 Icons.keyboard_arrow_right_outlined,
+                onTap: () {
+                  launch('https://www.facebook.com');
+                },
               ),
-              
               CustomListTile2(
                 "Twitter",
                 FontAwesomeIcons.twitter,
                 Icons.keyboard_arrow_right_outlined,
+                onTap: () {
+                  launch('https://www.twitter.com');
+                },
               ),
-
               CustomListTile2(
                 "Instagram",
                 FontAwesomeIcons.instagram,
                 Icons.keyboard_arrow_right_outlined,
-              ),
-              CustomListTile2(
-                "Location",
-                FontAwesomeIcons.locationArrow,
-                Icons.keyboard_arrow_right_outlined,
+                onTap: () {
+                  launch('https://www.instagram.com');
+                },
               ),
               // SwitchListTile(
               //   value: _darkMode,
@@ -77,7 +77,7 @@ class _ContactScreenState extends State<ContactScreen> {
               //   // switchType: SwitchType.material,
               //   activeColor: Colors.indigo,
               // ),
-              
+
               // Padding(
               //   padding: EdgeInsets.only(left: 20, top: 15, bottom: 14),
               //   child: Text(
@@ -102,7 +102,7 @@ class _ContactScreenState extends State<ContactScreen> {
               //   Icons.keyboard_arrow_right_outlined,
               // ),
               const SizedBox(height: 20),
-              
+
               // SizedBox(height: 30.0),
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.center,
@@ -140,7 +140,6 @@ class _ContactScreenState extends State<ContactScreen> {
           ),
         ),
       ),
-    
     );
   }
 }
@@ -149,9 +148,15 @@ class CustomListTile2 extends StatelessWidget {
   String title;
   IconData icon;
   IconData traling;
+  Function()? onTap;
 
-  CustomListTile2(this.title, this.icon, this.traling, {Key? key})
-      : super(key: key);
+  CustomListTile2(
+    this.title,
+    this.icon,
+    this.traling, {
+    Key? key,
+    this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -177,6 +182,7 @@ class CustomListTile2 extends StatelessWidget {
           traling,
           size: 22,
         ),
+        onTap: onTap,
       ),
     );
   }

@@ -41,6 +41,7 @@ export 'package:invoice/widgets/button/profile_button_tile.dart';
 export 'package:invoice/controller/product_list_controller.dart';
 export 'package:invoice/controller/gst_list_controller.dart';
 export 'package:invoice/view/init_screen/login/login_page.dart';
+export 'package:invoice/view/about.dart';
 
 export 'package:firebase_auth/firebase_auth.dart';
 export 'package:firebase_core/firebase_core.dart';
