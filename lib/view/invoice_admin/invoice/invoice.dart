@@ -2,6 +2,7 @@ import 'package:invoice/imports.dart';
 import 'package:invoice/imports.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'dart:io';
 
 class Invoice extends StatefulWidget {
   @override
@@ -143,7 +144,7 @@ class _InvoiceState extends State<Invoice> {
                             print("I am pressed");
                             // await Text2Pdf.generatePdf();
 
-                            final directory =
+                           ` final directory =
                                 await getExternalStorageDirectory();
                             final String customPath =
                                 '/storage/emulated/0/Documents/my_custom_directory';
@@ -157,7 +158,7 @@ class _InvoiceState extends State<Invoice> {
 
                             final String filePath =
                                 '${customDirectory.path}/${invoicePaper.name}${invoicePaper.id}.pdf';
-
+`
                             final pdf = pw.Document();
                             pdf.addPage(
                               pw.Page(
